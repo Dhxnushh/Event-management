@@ -1,0 +1,18 @@
+.acceptedRow {
+    background-color: rgb(90,240,20,0.46);
+    color: rgb(0, 0, 0)
+}
+  
+.rejectedRow {
+background-color: rgb(255,74,74,0.46);
+color: rgb(0, 0, 0);
+}
+  
+.pendingRow {
+background-color: rgb(255,197,109,0.78);
+color: black;
+}
+body{
+    background: #fff3ee;
+}
+  

@@ -1,0 +1,19 @@
+@tailwind base;
+*::-webkit-scrollbar {
+    width: 0px; /* Adjust width as desired */
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: transparent; /* Customize track background */
+    border-radius: 8px; /* Add rounded corners */
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color:transparent; /* Set thumb color */
+    border-radius: 10px; /* Add rounded corners */
+  }
+  #display::-webkit-scrollbar {
+    width: 2px; /* Adjust width as desired */
+  }
+@tailwind components;
+@tailwind utilities;
