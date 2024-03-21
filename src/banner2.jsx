@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import Popups from './popups'
 import { useState } from 'react'
 
-export default function Banner(){
+export default function Banner_2(){
     const [pop,setpop] = useState(false);
     return(
         <div className="flex justify-center align-middle">
@@ -14,6 +14,20 @@ export default function Banner(){
                     Ongoing events:
                 </h1>
                 <br/>
+                <Popups trigger={pop} settrigger={setpop}>
+                    <div className='flex justify-center align-middle items-center'>
+                        <div className='text-xl font-bold'>
+                            <br/>
+                            <p>Event Name: </p>
+                            <p>Time: </p>
+                            <p>Date: </p>
+                            <p>Venue: </p>
+                            <br/>
+                            
+                            <button className='rounded-2xl p-4 items-center bg-[#7EDBC5] text-base'>Register</button>
+                        </div>
+                    </div>
+                </Popups>
                 <div id='display' className='flex flex-row overflow-x-scroll'>
                     <li onClick={()=>setpop(true)} className=' shrink-0 list-none p-3'><img className='w-[250px] h-[350px] rounded-xl shadow-[3px_3px_5px]' src={image1}/></li>
                     <li onClick={()=>setpop(true)} className=' shrink-0 list-none p-3'><img className='w-[250px] h-[350px] rounded-xl shadow-[3px_3px_5px]' src={image2}/></li>
