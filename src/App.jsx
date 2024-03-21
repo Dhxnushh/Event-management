@@ -5,6 +5,8 @@ import Home_public from './pub-home'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Event_register from './new-event';
 import Register from './register';
+import Home_staff from './Home-staff';
+import Req from './requests';
 
 
 function App() {
@@ -16,6 +18,8 @@ function App() {
           <Route path="/Home" element={<Home/>}/>
           <Route path='/event' element={<Event_register/>}/>
           <Route path='/reg' element={<Register/>}></Route>
+          <Route path='/staff' element={<Home_staff/>}></Route>
+          <Route path='/req' element={<Req/>}></Route>
         </Routes>  
       </Router>
   )

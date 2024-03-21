@@ -1,14 +1,14 @@
 import pfp from "./assets/pfp.jpg";
-import new_event_vector from "./assets/new_event_vector.png";
-import register_vector from "./assets/register_vector.png";
 import Banner from "./banner";
 import Status from "./status";
-import Navbar from "./navbar";
+import Navbar_staff from "./Navbar-staff";
+import Event from "./assets/Event.png"
+import OD from "./assets/OD.png"
 import { Link } from "react-router-dom";
-export default function Home() {
+export default function Home_staff() {
   return (
     <div className="bg-[#fff3ee] bg-contain w-full h-full overflow-x-hidden">
-      <Navbar />
+      <Navbar_staff />
       <div className="block">
         <div className="  bg-[#04779b] rounded-b-[100px] w-[100vw] h-[210px]">
           <div className=" shadow-[3px_3px_5px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-[rgb(255,255,255)] p-6 w-[475px] h-[400px]">
@@ -26,22 +26,22 @@ export default function Home() {
             </div>
             <div className="flex justify-evenly p-4">
               <Link
-                to="/reg"
+                to="/req"
                 className="w-[70px] h-[70px] bg-[#3996b2] rounded-[300px] hover:transform hover:scale-110 hover:translate-y-2 duration-300 rounded-lg p-3 text-center"
               >
-                <img src={register_vector} />
+                <img src={OD} />
                 <br/>
                 <p className="font-bold text-left justify-center align-middle">
-                  Register
+                  Requests
                 </p>
               </Link>
               <Link
-                to="/event"
+                to="/coordinator"
                 className="w-[70px] h-[70px] bg-[#3996b2] rounded-[300px] hover:transform hover:scale-110 hover:translate-y-2 duration-300 rounded-lg p-3 text-center"
               >
-                <img src={new_event_vector} />
+                <img src={Event} />
                 <br/>
-                <p className="font-bold text-center">New_event</p>
+                <p className="font-bold text-center">Coordinator</p>
               </Link>
             </div>
           </div>

@@ -15,13 +15,13 @@ export default function Banner(){
                 </h1>
                 <br/>
                 <div id='display' className='flex flex-row overflow-x-scroll'>
-                    <li onClick={()=>setpop(true)} className=' shrink-0 list-none p-3'><img className='w-[250px] h-[350px] rounded-xl shadow-[3px_3px_5px]' src={image1}/></li>
-                    <li onClick={()=>setpop(true)} className=' shrink-0 list-none p-3'><img className='w-[250px] h-[350px] rounded-xl shadow-[3px_3px_5px]' src={image2}/></li>
-                    <li onClick={()=>setpop(true)} className=' shrink-0 list-none p-3'><img className='w-[250px] h-[350px] rounded-xl shadow-[3px_3px_5px]' src={image3}/></li>
-                    <li onClick={()=>setpop(true)} className=' shrink-0 list-none p-3'><img className='w-[250px] h-[350px] rounded-xl shadow-[3px_3px_5px]' src={image1}/></li>
-                    <li onClick={()=>setpop(true)} className=' shrink-0 list-none p-3'><img className='w-[250px] h-[350px] rounded-xl shadow-[3px_3px_5px]' src={image2}/></li>
-                    <li onClick={()=>setpop(true)} className=' shrink-0 list-none p-3'><img className='w-[250px] h-[350px] rounded-xl shadow-[3px_3px_5px]' src={image3}/></li>
-                    <li onClick={()=>setpop(true)} className=' shrink-0 list-none p-3'><img className='w-[250px] h-[350px] rounded-xl shadow-[3px_3px_5px]' src={image1}/></li>
+                    <li onClick={()=>setpop(true)} className=' shrink-0 list-none p-3'><img className='w-[250px] h-[350px] rounded-xl shadow-[3px_3px_5px] hover:transform hover:scale-110 hover:translate-y-2 duration-300 rounded-lg' src={image1}/></li>
+                    <li onClick={()=>setpop(true)} className=' shrink-0 list-none p-3'><img className='w-[250px] h-[350px] rounded-xl shadow-[3px_3px_5px] hover:transform hover:scale-110 hover:translate-y-2 duration-300 rounded-lg' src={image2}/></li>
+                    <li onClick={()=>setpop(true)} className=' shrink-0 list-none p-3'><img className='w-[250px] h-[350px] rounded-xl shadow-[3px_3px_5px] hover:transform hover:scale-110 hover:translate-y-2 duration-300 rounded-lg' src={image3}/></li>
+                    <li onClick={()=>setpop(true)} className=' shrink-0 list-none p-3'><img className='w-[250px] h-[350px] rounded-xl shadow-[3px_3px_5px] hover:transform hover:scale-110 hover:translate-y-2 duration-300 rounded-lg' src={image1}/></li>
+                    <li onClick={()=>setpop(true)} className=' shrink-0 list-none p-3'><img className='w-[250px] h-[350px] rounded-xl shadow-[3px_3px_5px] hover:transform hover:scale-110 hover:translate-y-2 duration-300 rounded-lg' src={image2}/></li>
+                    <li onClick={()=>setpop(true)} className=' shrink-0 list-none p-3'><img className='w-[250px] h-[350px] rounded-xl shadow-[3px_3px_5px] hover:transform hover:scale-110 hover:translate-y-2 duration-300 rounded-lg' src={image3}/></li>
+                    <li onClick={()=>setpop(true)} className=' shrink-0 list-none p-3'><img className='w-[250px] h-[350px] rounded-xl shadow-[3px_3px_5px] hover:transform hover:scale-110 hover:translate-y-2 duration-300 rounded-lg' src={image1}/></li>
                 </div>
             </div>
         </div>
