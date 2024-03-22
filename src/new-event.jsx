@@ -3,7 +3,7 @@ import Navbar from "./navbar";
 export default function Event_register(){
     return(
         <div className="w-full h-full bg-[#fff3ee]">
-            <Navbar/>
+            <Navbar link={'/home'}/>
             <div className="flex flex-col justify-center align-middle items-center mt-8">
                 <h1 className="font-bold text-3xl">Event Registration</h1>
                 <br/>

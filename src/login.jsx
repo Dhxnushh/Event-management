@@ -10,9 +10,11 @@ export default function Login(){
                     <img src={sathybama}></img>
                 </div>
                 <div className="flex justify-center align-middle text-center p-2">
-                    <a className="rounded-lg bg-[#1f5261] w-14 h-8 mr-5 mt-[20%]">
-                        <p className="text-center p-[4px] text-white" >Login</p>
-                    </a>
+                    <Link to="/login" className="flex justify-center align-middle items-center">
+                        <div className='bg-[#3996b2] rounded-2xl h-[fit] hover:transform hover:scale-110 hover:rounded-3xl duration-300 p-2'>
+                            <p className="text-center p-[4px] text-white" >Login</p>
+                        </div>
+                    </Link>
                 </div>
             </div>
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-[rgb(0,0,0,0.7)] p-6 w-[360px] h-[450px]">
@@ -31,7 +33,7 @@ export default function Login(){
                         <a className="text-white text-center">Forgot password? Click here.</a>
                         <br/>
                         <div className="flex justify-center align-middle">
-                            <Link to="/home" className="rounded-3xl bg-[#7EDBC5] align-middle p-3 w-28 text-center">Login</Link>
+                            <Link to="/home" className="rounded-2xl bg-[#7EDBC5] align-middle p-3 w-28 text-center hover:transform hover:scale-110 hover:rounded-3xl duration-300 p-2">Login</Link>
                         </div>
                     </div>
             </div>

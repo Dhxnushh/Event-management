@@ -3,7 +3,7 @@ import notif_bell from './assets/notif_bell.png'
 import sathybama from "./assets/sathybama.png"
 import { Link } from 'react-router-dom'
 
-export default function Navbar(){
+export default function Navbar(props){
     return(
         
         <div className="flex bg-[#04779b] justify-between h-20 align-middle">
@@ -15,7 +15,7 @@ export default function Navbar(){
                     <img className="w-[35px] h-auto mb-[2.5px] top-3" src={notif_bell}/>
                 </a>
                 <p>⠀</p>
-                <Link to='/home' className="flex flex-row items-center text-nowrap right-4">  {/* Use flex-col for vertical alignment */}
+                <Link to={props.link} className="flex flex-row items-center text-nowrap right-4">  {/* Use flex-col for vertical alignment */}
                     <img className="w-[50px] h-auto mb-[2.5px] top-3" src={profile_component} alt="Profile Image" /> {/* Added margin for spacing */}
                     <p className="text-end text-white font-bold align-middle">Akina benat</p>
                 </Link>

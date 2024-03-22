@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 export default function Home() {
   return (
     <div className="bg-[#fff3ee] bg-contain w-full h-full overflow-x-hidden">
-      <Navbar />
+      <Navbar link={'/home'} />
       <div className="block">
         <div className="  bg-[#04779b] rounded-b-[100px] w-[100vw] h-[210px]">
           <div className=" shadow-[3px_3px_5px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-[rgb(255,255,255)] p-6 w-[475px] h-[400px]">
@@ -27,7 +27,7 @@ export default function Home() {
             <div className="flex justify-evenly p-4 items-center">
               <div className="flex-1">
               <Link to="/reg" className="flex flex-col justify-center items-center">
-                <div className=" w-[70px] h-[70px]  bg-[#3996b2] rounded-[300px] hover:transform hover:scale-110 hover:translate-y-2 duration-300 rounded-lg p-3 text-center">
+                <div className="w-[70px] h-[70px]  bg-[#3996b2] rounded-2xl hover:transform hover:scale-110 duration-300 hover:rounded-[35px] p-3 text-center">
                   <img src={register_vector} />
                 </div>
                 <br/>
@@ -38,8 +38,8 @@ export default function Home() {
               </div>
               <div
               className="flex-1">
-              <Link to="/reg" className="flex flex-col justify-center items-center">
-                <div className=" w-[70px] h-[70px]  bg-[#3996b2] rounded-full hover:transform hover:scale-110 hover:translate-y-2 duration-300 rounded-lg p-3 text-center">
+              <Link to="/event" className="flex flex-col justify-center items-center">
+                <div className="w-[70px] h-[70px]  bg-[#3996b2] rounded-2xl hover:transform hover:scale-110 duration-300 hover:rounded-[35px] p-3 text-center">
                   <img src={new_event_vector} />
                 </div>
                 <br/>
@@ -52,7 +52,7 @@ export default function Home() {
           </div>
         </div>
         <div className="mt-[325px] block">
-          <Banner />
+          <Banner functional={false} />
         </div>
         <div className="block">
           <Status />

@@ -1,4 +1,4 @@
-import Navbar_staff from "./Navbar-staff";
+import Navbar from "./navbar";
 import OD from "./assets/OD.png"
 import Pending from "./pending";
 
@@ -7,7 +7,7 @@ export default function Req(){
     
     return(
         <div>
-            <Navbar_staff/>
+            <Navbar link={'/staff'}/>
             <div className="flex justify-between">
                 <div className="absolute top-1/2 left-6 translate-y-[-25%]">
                     <img src={OD} className="rounded-full w-24 bg-[#3ca7cb] border-black border-[5px]"></img>

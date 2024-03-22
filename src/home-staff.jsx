@@ -1,14 +1,14 @@
 import pfp from "./assets/pfp.jpg";
 import Banner from "./banner";
 import Status from "./status";
-import Navbar_staff from "./Navbar-staff";
+import Navbar from "./navbar";
 import Event from "./assets/Event.png"
 import OD from "./assets/OD.png"
 import { Link } from "react-router-dom";
 export default function Home_staff() {
   return (
     <div className="bg-[#fff3ee] bg-contain w-full h-full overflow-x-hidden">
-      <Navbar_staff />
+      <Navbar link={'/staff'}/>
       <div className="block">
         <div className="  bg-[#04779b] rounded-b-[100px] w-[100vw] h-[210px]">
           <div className=" shadow-[3px_3px_5px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-[rgb(255,255,255)] p-6 w-[475px] h-[400px]">
@@ -26,7 +26,7 @@ export default function Home_staff() {
             </div>
             <div className="flex justify-evenly p-4">
             <Link to="/req" className="flex flex-col justify-center items-center">
-                <div className=" w-[70px] h-[70px]  bg-[#3996b2] rounded-[300px] hover:transform hover:scale-110 hover:translate-y-2 duration-300 rounded-lg p-3 text-center">
+                <div className=" w-[70px] h-[70px]  bg-[#3996b2] rounded-2xl hover:transform hover:scale-110 duration-300 hover:rounded-[35px] p-3 text-center">
                   <img src={OD} />
                 </div>
                 <br/>
@@ -35,7 +35,7 @@ export default function Home_staff() {
                 </p>
               </Link>
               <Link to="/coordinator" className="flex flex-col justify-center items-center">
-                <div className=" w-[70px] h-[70px]  bg-[#3996b2] rounded-[300px] hover:transform hover:scale-110 hover:translate-y-2 duration-300 rounded-lg p-3 text-center">
+                <div className=" w-[70px] h-[70px]  bg-[#3996b2] rounded-2xl hover:transform hover:scale-110 duration-300 hover:rounded-[35px] p-3 text-center">
                   <img src={Event} />
                 </div>
                 <br/>
@@ -47,7 +47,7 @@ export default function Home_staff() {
           </div>
         </div>
         <div className="mt-[325px] block">
-          <Banner />
+          <Banner functional={false} />
         </div>
         <div className="block">
           <Status />

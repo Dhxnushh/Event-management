@@ -11,13 +11,15 @@ export default function Home_public(){
                     <img src={sathybama}></img>
                 </div>
                 <div className="flex justify-center align-middle text-center p-2">
-                    <Link to="/login" className="rounded-lg bg-[#1f5261] w-14 h-8 mr-5 mt-[20%]">
-                        <p className="text-center p-[4px] text-white" >Login</p>
+                    <Link to="/login" className="flex justify-center align-middle items-center">
+                        <div className='bg-[#3996b2] rounded-2xl h-[fit] hover:transform hover:scale-110 hover:rounded-3xl duration-300 p-2'>
+                            <p className="text-center p-[4px] text-white" >Login</p>
+                        </div>
                     </Link>
                 </div>
             </div>
             <div className='mt-20'>
-                <Banner/>
+                <Banner functional={false} />
             </div>
         </div>
     )
