@@ -7,9 +7,11 @@ export default function Navbar(props){
     return(
         
         <div className="flex bg-[#04779b] justify-between h-20 align-middle">
-            <div className="w-80">
-                <img src={sathybama}></img>
-            </div>
+            <Link to={props.link}>
+                <div className="w-80">
+                    <img src={sathybama}></img>
+                </div>
+            </Link>
             <div className="flex justify-evenly align-middle">
                 <a className="flex flex-row items-center text-nowrap right-4">
                     <img className="w-[35px] h-auto mb-[2.5px] top-3" src={notif_bell}/>
