@@ -25,23 +25,23 @@ export default function Home_staff() {
               <br />
             </div>
             <div className="flex justify-evenly p-4">
-              <Link
-                to="/req"
-                className="w-[70px] h-[70px] bg-[#3996b2] rounded-[300px] hover:transform hover:scale-110 hover:translate-y-2 duration-300 rounded-lg p-3 text-center"
-              >
-                <img src={OD} />
+            <Link to="/req" className="flex flex-col justify-center items-center">
+                <div className=" w-[70px] h-[70px]  bg-[#3996b2] rounded-[300px] hover:transform hover:scale-110 hover:translate-y-2 duration-300 rounded-lg p-3 text-center">
+                  <img src={OD} />
+                </div>
                 <br/>
-                <p className="font-bold text-left justify-center align-middle">
+                <p className="font-bold text-center">
                   Requests
                 </p>
               </Link>
-              <Link
-                to="/coordinator"
-                className="w-[70px] h-[70px] bg-[#3996b2] rounded-[300px] hover:transform hover:scale-110 hover:translate-y-2 duration-300 rounded-lg p-3 text-center"
-              >
-                <img src={Event} />
+              <Link to="/coordinator" className="flex flex-col justify-center items-center">
+                <div className=" w-[70px] h-[70px]  bg-[#3996b2] rounded-[300px] hover:transform hover:scale-110 hover:translate-y-2 duration-300 rounded-lg p-3 text-center">
+                  <img src={Event} />
+                </div>
                 <br/>
-                <p className="font-bold text-center">Coordinator</p>
+                <p className="font-bold text-center">
+                  Coordinator
+                </p>
               </Link>
             </div>
           </div>

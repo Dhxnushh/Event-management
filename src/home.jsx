@@ -24,25 +24,30 @@ export default function Home() {
               <p>Department: BE CSE AIML</p>
               <br />
             </div>
-            <div className="flex justify-evenly p-4">
-              <Link
-                to="/reg"
-                className="w-[70px] h-[70px] bg-[#3996b2] rounded-[300px] hover:transform hover:scale-110 hover:translate-y-2 duration-300 rounded-lg p-3 text-center"
-              >
-                <img src={register_vector} />
+            <div className="flex justify-evenly p-4 items-center">
+              <div className="flex-1">
+              <Link to="/reg" className="flex flex-col justify-center items-center">
+                <div className=" w-[70px] h-[70px]  bg-[#3996b2] rounded-[300px] hover:transform hover:scale-110 hover:translate-y-2 duration-300 rounded-lg p-3 text-center">
+                  <img src={register_vector} />
+                </div>
                 <br/>
-                <p className="font-bold text-left justify-center align-middle">
+                <p className="font-bold text-center">
                   Register
                 </p>
               </Link>
-              <Link
-                to="/event"
-                className="w-[70px] h-[70px] bg-[#3996b2] rounded-[300px] hover:transform hover:scale-110 hover:translate-y-2 duration-300 rounded-lg p-3 text-center"
-              >
-                <img src={new_event_vector} />
+              </div>
+              <div
+              className="flex-1">
+              <Link to="/reg" className="flex flex-col justify-center items-center">
+                <div className=" w-[70px] h-[70px]  bg-[#3996b2] rounded-full hover:transform hover:scale-110 hover:translate-y-2 duration-300 rounded-lg p-3 text-center">
+                  <img src={new_event_vector} />
+                </div>
                 <br/>
-                <p className="font-bold text-center">New_event</p>
+                <p className="font-bold text-center">
+                  New_event
+                </p>
               </Link>
+              </div>
             </div>
           </div>
         </div>
