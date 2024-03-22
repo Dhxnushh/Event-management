@@ -7,13 +7,29 @@
     background: transparent; /* Customize track background */
     border-radius: 8px; /* Add rounded corners */
   }
-  
+
   *::-webkit-scrollbar-thumb {
     background-color:transparent; /* Set thumb color */
     border-radius: 10px; /* Add rounded corners */
   }
-  #display::-webkit-scrollbar {
-    width: 2px; /* Adjust width as desired */
+
+  .acceptedRow {
+    background-color: rgb(90,240,20,0.46);
+    color: rgb(0, 0, 0)
+  }
+  
+  .rejectedRow {
+    background-color: rgb(255,74,74,0.46);
+    color: rgb(0, 0, 0);
+  }
+  
+  .pendingRow {
+    background-color: rgb(255,197,109,0.78);
+    color: black;
+  }
+
+  body{
+    background: #fff3ee;
   }
 @tailwind components;
 @tailwind utilities;

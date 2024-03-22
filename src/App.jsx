@@ -1,4 +1,3 @@
-import './App.css'
 import Login from './login'
 import Home from './home'
 import Home_public from './home-public'
@@ -7,7 +6,6 @@ import Event_register from './new-event';
 import Register from './register';
 import Home_staff from './home-staff';
 import Req from './requests';
-
 
 function App() {
   return (
