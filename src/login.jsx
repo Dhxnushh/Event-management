@@ -1,8 +1,38 @@
 import { Link } from "react-router-dom"
 import sathybama from "./assets/sathybama.png"
+import { auth } from "../firebase"
+import {signInWithEmailAndPassword} from "firebase/auth"
+import { useState } from "react"
+import { useNavigate } from "react-router-dom"
+import { signOut } from "firebase/auth"
+import { useEffect } from "react"
 
 
 export default function Login(){
+    const navigate = useNavigate()
+    const [islog,setislog] = useState(false)
+    const [regno,setregno]=useState("")
+    const [pw,setpw]=useState("")
+    async function login(){
+        const email = `${regno}@gmail.com`;
+        const password = pw;
+        try {
+            await signInWithEmailAndPassword(auth, email, password);
+            setislog(true);
+        } catch (error) {
+            console.error("Login failed:", error);
+            console.log(auth?.currentUser?.email)
+        }
+    }
+    useEffect(()=>{
+        if(islog){
+            navigate('/home')
+        }
+        else{
+            console.log('wrong regno or pw')
+        }
+    }
+    )
     return(
         <div className="bg-my-image w-[100vw] h-[100vh] bg-cover">
             <div className="flex bg-[#04779b] justify-between h-20 align-middle">
@@ -24,16 +54,16 @@ export default function Login(){
                         <br/>
                         <p className="text-white">Register No:</p>
                         <br/>
-                        <input className="rounded-lg w-[97%] h-8 p-2" type="text" placeholder="Register number"/>
+                        <input onChange={(e)=>setregno(e.target.value)} className="rounded-lg w-[97%] h-8 p-2" type="text" placeholder="Register number"/>
                         <br/>
                         <p className="text-white">Password:</p>
                         <br/>
-                        <input className="rounded-lg w-[97%] h-8 p-2" type="password" placeholder="Password"/>
+                        <input onChange={(e)=>setpw(e.target.value)} className="rounded-lg w-[97%] h-8 p-2" type="password" placeholder="Password"/>
                         <br/>
                         <a className="text-white text-center">Forgot password? Click here.</a>
                         <br/>
                         <div className="flex justify-center align-middle">
-                            <Link to="/home" className="rounded-2xl bg-[#7EDBC5] align-middle p-3 w-28 text-center hover:transform hover:scale-110 hover:rounded-3xl duration-300 p-2">Login</Link>
+                            <button onClick={login} className="rounded-2xl bg-[#7EDBC5] align-middle p-3 w-28 text-center hover:transform hover:scale-110 hover:rounded-3xl duration-300 p-2">Login</button>
                         </div>
                     </div>
             </div>

@@ -5,25 +5,48 @@ import Banner from "./banner";
 import Status from "./status";
 import Navbar from "./navbar";
 import { Link } from "react-router-dom";
+import { query, collection, where, getDocs } from "firebase/firestore";
+import { db } from "../firebase";
+import { auth } from "../firebase";
+import { useEffect,useState } from "react";
+
 export default function Home() {
+  const [studentData, setStudentData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const email = auth.currentUser.email;
+      const regno = Number(email.slice(0, email.indexOf("@"))); // Commented out (optional)
+      const q = query(collection(db, "Students"),where("registerno","==",regno));
+      const snapshot = await getDocs(q);
+      const data = snapshot.docs.map((doc) => doc.data());
+      console.log(data)
+      setStudentData(data);
+    };
+    fetchData();
+  },[]);
+  
+
   return (
-    <div className="bg-[#fff3ee] bg-contain w-full h-full overflow-x-hidden">
-      <Navbar link={'/home'} />
+    <div>
+      {studentData.map((student)=>(
+      <div key={student.registerno}>
+      
+        <div className="bg-[#fff3ee] bg-contain w-full h-full overflow-x-hidden">
+      <Navbar link={'/home'} user={student.Name}/>
       <div className="block">
         <div className="  bg-[#04779b] rounded-b-[100px] w-[100vw] h-[210px]">
           <div className=" shadow-[3px_3px_5px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-[rgb(255,255,255)] p-6 w-[475px] h-[400px]">
-            <img
-              className=" shadow-black w-[170px] h-[170px] rounded-full absolute top-2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 shadow-[0px_0px_0px]"
-              src={pfp}
-            />
-            <div className="flex justify-between align-middle flex-col text-center mt-20">
-              <h2 className="font-bold text-2xl">Akina benat</h2>
-              <br />
-              <p>Register No: 43611011</p>
-              <br />
-              <p>Department: BE CSE AIML</p>
-              <br />
-            </div>
+            
+                <img className=" shadow-black w-[170px] h-[170px] rounded-full absolute top-2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 shadow-[0px_0px_0px]" src={student.img}/>
+                <div className="flex justify-between align-middle flex-col text-center mt-20">
+                    <h2 className="font-bold text-2xl">{student.Name}</h2>
+                    <br />
+                    <p>Register No:{student.registerno}</p>
+                    <br />
+                    <p>Department:{student.dept}</p>
+                    <br />
+                  </div>
             <div className="flex justify-evenly p-4 items-center">
               <div className="flex-1">
               <Link to="/reg" className="flex flex-col justify-center items-center">
@@ -58,6 +81,10 @@ export default function Home() {
           <Status />
         </div>
       </div>
+      </div>
     </div>
+    ))} 
+    </div>
+    
   );
 }
