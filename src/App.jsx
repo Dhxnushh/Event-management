@@ -5,7 +5,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Event_register from './new-event';
 import Register from './register';
 import Home_staff from './home-staff';
-import Req from './requests';
+import Req from './od-requests';
+import Event_req from './event-requests';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path='/reg' element={<Register/>}></Route>
           <Route path='/staff' element={<Home_staff/>}></Route>
           <Route path='/req' element={<Req/>}></Route>
+          <Route path='/eventreq' element={<Event_req/>}></Route>
         </Routes>  
       </Router>
   )

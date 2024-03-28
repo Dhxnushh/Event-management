@@ -7,20 +7,25 @@ export default function Pending(props){
     return(
         <div>
             <Popups trigger={pop} settrigger={setpop}>
-                <div className=' z-10 flex justify-center align-middle items-center'>
-                    <div className='text-xl font-bold'>
-                        <br/>
-                        <p>Student name:{props.name}</p>
-                        <p>Register No:{props.regno}</p>
-                        <p>Event Name:{props.event}</p>
-                        <p>Time:{props.time}</p>
-                        <p>Date:{props.date}</p>
-                        <p>Venue:{props.venue}</p>
-                        <br/>
-                        <div className="flex justify-evenly align-middle">
-                            <button className='rounded-2xl p-4 items-center bg-[#42d767] text-base hover:transform hover:scale-110 hover:duration-300'>Accept</button>
-                            <button className='rounded-2xl p-4 items-center bg-[#f54b4b] text-base hover:transform hover:scale-110 hover:duration-300'>Reject</button>
+                <div className="flex flex-col gap-4 mt-4">
+                    <div className=' z-10 flex justify-center align-middle items-center gap-4'>
+                        <div className=" w-[250px]">
+                            <img src={image1} className="rounded-2xl"/>
                         </div>
+                        <div className='text-xl font-bold'>
+                            <br/>
+                            <p>Student name:<span className="font-medium">{props.name}</span></p>
+                            <p>Register No:<span className="font-medium">{props.regno}</span></p>
+                            <p>Event Name:<span className="font-medium">{props.event}</span></p>
+                            <p>Time:<span className="font-medium">{props.time}</span></p>
+                            <p>Date:<span className="font-medium">{props.date}</span></p>
+                            <p>Venue:<span className="font-medium">{props.venue}</span></p>
+                            <br/>
+                        </div>
+                    </div>
+                    <div className="flex justify-evenly align-middle">
+                        <button className='rounded-2xl p-4 items-center bg-[#42d767] text-base hover:transform hover:scale-110 hover:duration-300'>Accept</button>
+                        <button className='rounded-2xl p-4 items-center bg-[#f54b4b] text-base hover:transform hover:scale-110 hover:duration-300'>Reject</button>
                     </div>
                 </div>
             </Popups>

@@ -1,6 +1,6 @@
 import Navbar from "./navbar";
 import OD from "./assets/OD.png"
-import Pending from "./pending";
+import Pending from "./pending-od";
 
 
 export default function Req(){

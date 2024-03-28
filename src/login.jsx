@@ -4,12 +4,12 @@ import { auth } from "../firebase"
 import {signInWithEmailAndPassword} from "firebase/auth"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { signOut } from "firebase/auth"
 import { useEffect } from "react"
 
 
 export default function Login(){
     const navigate = useNavigate()
+    const [user,setuser] = useState("student")
     const [islog,setislog] = useState(false)
     const [regno,setregno]=useState("")
     const [pw,setpw]=useState("")
@@ -25,8 +25,11 @@ export default function Login(){
         }
     }
     useEffect(()=>{
-        if(islog){
+        if(islog && user==="student"){
             navigate('/home')
+        }
+        else if(islog && user==="staff"){
+            navigate('/staff')
         }
         else{
             console.log('wrong regno or pw')
@@ -47,11 +50,16 @@ export default function Login(){
                     </Link>
                 </div>
             </div>
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-[rgb(0,0,0,0.7)] p-6 w-[360px] h-[450px]">
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-[rgb(0,0,0,0.7)] p-6 w-[380px] h-[500px]">
                     <div className="flex justify-center align-middle flex-col">
                         <br/>
                         <h1 className="text-white text-center text-3xl font-bold">Login</h1>
                         <br/>
+                        <select className="rounded-lg w-[97%] h-10 p-2" placeholder="Student" onChange={(e)=>setuser(e.target.value)}>
+                            <option value="student">Student</option>
+                            <option value="staff">Staff</option>
+                        </select>
+                        <br />
                         <p className="text-white">Register No:</p>
                         <br/>
                         <input onChange={(e)=>setregno(e.target.value)} className="rounded-lg w-[97%] h-8 p-2" type="text" placeholder="Register number"/>

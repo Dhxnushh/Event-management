@@ -2,7 +2,11 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import {getAuth} from 'firebase/auth';
-import {getFirestore} from 'firebase/firestore'
+import {getFirestore,collection} from 'firebase/firestore'
+import { ref,getStorage } from "firebase/storage";
+import { v4 as uuidv4 } from 'uuid';
+
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyDTYLEQf0Q97fnUaU6pFszrB5eJoiuoScg",
@@ -20,3 +24,6 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 export const auth = getAuth(app)
 export const db = getFirestore(app)
+export const Eventsref = collection(db,"Events");
+const storage = getStorage();
+export const storageRef = ref(storage, `images/${uuidv4()}.jpg`);
