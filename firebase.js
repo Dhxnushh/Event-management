@@ -26,4 +26,4 @@ export const auth = getAuth(app)
 export const db = getFirestore(app)
 export const Eventsref = collection(db,"Events");
 const storage = getStorage();
-export const storageRef = ref(storage, `images/${uuidv4()}.jpg`);
+export const storageRef = ref(storage, `images/${uuidv4()}.png`);

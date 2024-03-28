@@ -1,4 +1,4 @@
-import pfp from "./assets/pfp.jpg";
+
 import Banner from "./banner";
 import Status from "./status";
 import Navbar from "./navbar";
@@ -36,7 +36,7 @@ export default function Home_staff() {
               <div className=" shadow-[3px_3px_5px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-[rgb(255,255,255)] p-6 w-[475px] h-[400px]">
                 <img
                   className=" shadow-black w-[170px] h-[170px] rounded-full absolute top-2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 shadow-[0px_0px_0px]"
-                  src={pfp}
+                  src={staff.img}
                 />
                 <div className="flex justify-between align-middle flex-col text-center mt-20">
                   <h2 className="font-bold text-2xl">{staff.Name}</h2>

@@ -1,4 +1,4 @@
-import pfp from "./assets/pfp.jpg";
+
 import new_event_vector from "./assets/new_event_vector.png";
 import register_vector from "./assets/register_vector.png";
 import Banner from "./banner";
@@ -25,6 +25,7 @@ export default function Home() {
     };
     fetchData();
   },[]);
+  
   
 
   return (

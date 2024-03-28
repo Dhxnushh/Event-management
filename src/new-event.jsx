@@ -1,10 +1,10 @@
 import Navbar from "./navbar";
 import { auth,db,Eventsref,storageRef } from "../firebase";
-import { useState,useEffect } from "react";
+import { useState,useEffect,useRef } from "react";
 import Popups from "./popups";
 import { addDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom"
-import { uploadBytes } from "firebase/storage";
+import { uploadBytes,ref,getDownloadURL } from "firebase/storage";
 
 
 export default function Event_register(){
@@ -18,20 +18,16 @@ export default function Event_register(){
     const [status,setstatus] = useState(false)
     const [desc,setdesc] = useState("")
     const [pop,setpop]=useState(false)
-    const [img,setimg]=useState("")
+    const imgRef = useRef(null)
     console.log(date,time,etime)
-    const image = img;
-    uploadBytes(storageRef, img)
-        .then((snapshot) => {
-        console.log('Uploaded a picture!');
-        return getDownloadUrl(storageRef);
-        })
-        .then((downloadURL) => {
-            setbrochure(downloadURL);
-        })
-        .catch((error) => {
-            console.error('Error uploading file:', error);
-        });
+    async function upload(){
+        const img = imgRef.current.files[0];
+        await uploadBytes(storageRef, img,{contentType:"image/png"});
+        const URL = await getDownloadURL(ref(storageRef));
+        console.log(URL);
+        setbrochure(URL);
+    }
+    
     const addevent = {
         "Event-name":event,
         "Date":date,
@@ -39,7 +35,8 @@ export default function Event_register(){
         "venue":venue,
         "brochure":brochure,
         "status":status,
-        "desc":desc
+        "desc":desc,
+        "Regstu":[]
     }
     function showpop(){
         setpop(true)
@@ -49,7 +46,6 @@ export default function Event_register(){
         redirect("/home")
     }
     
-
     return(
         <div>
             <Popups trigger={pop} settrigger={setpop}>  
@@ -110,7 +106,7 @@ export default function Event_register(){
                     </div>
                     <div>
                         <label for="fileInput">Upload Brochure:</label>
-                        <input onChange={(e)=>setimg(e.target.value)} type="file" id="fileInput" class="file:bg-gray-100 file:text-gray-700 file:border file:border-gray-300 file:rounded-md file:py-2 file:px-3 hover:file:bg-gray-200"/>
+                        <input onChange={upload} ref={imgRef} type="file" accept="image/png" id="fileInput" class="file:bg-gray-100 file:text-gray-700 file:border file:border-gray-300 file:rounded-md file:py-2 file:px-3 hover:file:bg-gray-200"/>
                         <br/>
                         <br/>
                     </div>

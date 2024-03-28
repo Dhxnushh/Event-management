@@ -13,11 +13,10 @@ export default function Event_req(){
       const q = query(collection(db, "Events"),where("status","==",false));
       const snapshot = await getDocs(q);
       const data = snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
-      console.log(data)
       seteventData(data);
     };
     fetchData();
-  },[]);
+    },[]);
     return(
         <div>
             <Navbar link={'/staff'}/>

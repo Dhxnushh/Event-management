@@ -1,6 +1,5 @@
 import Popups from "./popups";
 import { useState } from "react";
-import image1 from "./assets/image1.png"
 import { updateDoc,deleteDoc,doc } from "firebase/firestore";
 import { db } from "../firebase";
 
