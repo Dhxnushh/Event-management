@@ -23,7 +23,7 @@ export default function Pending_event(props){
         <div>
             <Popups trigger={pop} settrigger={setpop}>
                 <div className="flex flex-col gap-4 mt-4">
-                    <div className=' z-10 flex justify-center align-middle items-center gap-4'>
+                    <div className=' z-30 flex justify-center align-middle items-center gap-4'>
                         <div className=" w-[250px]">
                             <img src={props.brochure} className="rounded-2xl"/>
                         </div>

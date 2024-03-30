@@ -21,7 +21,7 @@ export default function Event_req(){
         <div>
             <Navbar link={'/staff'}/>
             <div className="flex justify-between">
-                <div className="absolute top-1/2 left-6 translate-y-[-25%]">
+                <div className="z-20 absolute top-1/2 left-6 translate-y-[-25%]">
                     <img src={new_event_vector} className=" p-3 rounded-full w-24 bg-[#3ca7cb] border-black border-[5px]"></img>
                     <br/>
                     <p className="text-bold">Event-Requests</p>
