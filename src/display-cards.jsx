@@ -1,13 +1,15 @@
 import Popups from "./popups"
-import { query, collection, where, getDocs,addDoc, FieldValue } from "firebase/firestore";
+import { query, collection, where, getDocs, updateDoc , doc , arrayUnion} from "firebase/firestore";
 import { db } from "../firebase";
 import { auth } from "../firebase";
 import { useEffect,useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 export default function Display_cards(props){
     const [pop,setpop] = useState(false)
     const [studentData, setStudentData] = useState([]);
+    const redirect = useNavigate();
 
     useEffect(() => {
     const fetchData = async () => {
@@ -21,22 +23,23 @@ export default function Display_cards(props){
     };
     fetchData();
     },[]);
-    function handleReg(Name,reg,dept){
-        const student = [{
+    const handleReg = async (Name,reg,dept) =>{
+        const student = {
             "Name":Name,
             "RegNo":reg,
             "Dept":dept,
             "Status":0
-        }]
+        }
         const updates = {
-            Regstu: student,
+            Regstu: arrayUnion(student),
         };
-        addDoc(props.id,updates)
-        console.log("done")
-
+        const docref = doc(db,"Events",props.id)
+        await updateDoc(docref,updates)
+        redirect("/home")
     }
     return(
             <div>
+
                 <Popups trigger={pop} settrigger={setpop}>
                     <div className="flex flex-col justify-center align-middle">
                     <div className=' z-10 flex justify-center align-middle items-center gap-4'>

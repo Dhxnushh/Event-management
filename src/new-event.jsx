@@ -36,7 +36,7 @@ export default function Event_register(){
         "brochure":brochure,
         "status":status,
         "desc":desc,
-        "Regstu":[]
+        "Regstu":[{}]
     }
     function showpop(){
         setpop(true)
