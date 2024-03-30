@@ -1,6 +1,6 @@
 import Navbar from "./navbar";
-import { auth,db,Eventsref,storageRef } from "../firebase";
-import { useState,useEffect,useRef } from "react";
+import { Eventsref,storageRef } from "../firebase";
+import { useState,useRef } from "react";
 import Popups from "./popups";
 import { addDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom"
@@ -15,7 +15,6 @@ export default function Event_register(){
     const [etime,setetime] = useState("")
     const [venue,setvenue] = useState("")
     const [brochure,setbrochure] = useState("")
-    const [status,setstatus] = useState(false)
     const [desc,setdesc] = useState("")
     const [pop,setpop]=useState(false)
     const imgRef = useRef(null)
@@ -34,7 +33,7 @@ export default function Event_register(){
         "time":`${time}-${etime}`,
         "venue":venue,
         "brochure":brochure,
-        "status":status,
+        "status":false,
         "desc":desc,
         "Regstu":[{}]
     }
@@ -45,16 +44,18 @@ export default function Event_register(){
         addDoc(Eventsref,addevent)
         redirect("/home")
     }
-    
     return(
         <div>
             <Popups trigger={pop} settrigger={setpop}>  
-                <div className=' z-10 flex justify-center align-middle items-center'>
+                <div className=' z-10 flex gap-4 mt-2 justify-center align-middle items-center'>
+                    <div className=" w-[250px]">
+                        <img src={brochure} className="rounded-2xl"/>
+                    </div>
                     <div className='text-xl font-bold'>
                         <br/>
                         <p>Event name:{event}</p>
                         <p>Date:{date}</p>
-                        <p>Time:{}</p>
+                        <p>Time:{time}-{etime}</p>
                         <p>Desc:{desc}</p>
                         <p>Venue:{venue}</p>
                         <br/>
