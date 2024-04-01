@@ -1,9 +1,10 @@
 import Popups from "./popups"
-import { query, collection, where, getDocs, updateDoc , doc , arrayUnion} from "firebase/firestore";
+import { query, collection, where, getDocs, addDoc} from "firebase/firestore";
 import { db } from "../firebase";
 import { auth } from "../firebase";
 import { useEffect,useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Regref } from "../firebase";
 
 
 export default function Display_cards(props){
@@ -28,13 +29,15 @@ export default function Display_cards(props){
             "Name":Name,
             "RegNo":reg,
             "Dept":dept,
+            "Event":props.id,
+            "Ename":props.name,
+            "Brochure":props.brochure,
+            "Time":props.time,
+            "Date":props.date,
+            "Venue":props.venue,
             "Status":0
         }
-        const updates = {
-            Regstu: arrayUnion(student),
-        };
-        const docref = doc(db,"Events",props.id)
-        await updateDoc(docref,updates)
+        await addDoc(Regref,student)
         redirect("/home")
     }
     return(

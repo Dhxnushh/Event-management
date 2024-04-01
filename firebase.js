@@ -25,5 +25,6 @@ const analytics = getAnalytics(app);
 export const auth = getAuth(app)
 export const db = getFirestore(app)
 export const Eventsref = collection(db,"Events");
+export const Regref = collection(db,"Register");
 const storage = getStorage();
 export const storageRef = ref(storage, `images/${uuidv4()}.png`);

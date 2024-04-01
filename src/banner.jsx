@@ -1,8 +1,9 @@
 
-import Display_cards from './display-cards'
+import Display_cards from './reg-cards'
 import { auth,db } from "../firebase";
 import { useState,useEffect } from "react";
 import { query, collection, where, getDocs } from "firebase/firestore";
+import { List_cards } from './list-cards';
 
 export default function Banner(props){
     const [eventData, seteventData] = useState([]);
@@ -48,7 +49,7 @@ export default function Banner(props){
                 <div id='display' className='flex flex-row overflow-x-scroll'>
                     {eventData.map((event)=>(
                     <div key={event.id}>
-                    <li className=' shrink-0 list-none p-3'><img className='w-[250px] h-[350px] rounded-xl shadow-[3px_3px_5px] hover:transform hover:scale-110 hover:translate-y-2 duration-300 rounded-lg text-center"' src={event.brochure}/></li>
+                    <List_cards id={event.id} brochure={event.brochure} list={event.Regstu}/>
                     </div>
                     ))}
                 </div>

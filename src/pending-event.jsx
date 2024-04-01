@@ -4,6 +4,7 @@ import { updateDoc,deleteDoc,doc } from "firebase/firestore";
 import { db } from "../firebase";
 
 
+
 export default function Pending_event(props){
     const [pop,setpop]=useState(false)
     function approve(){
@@ -47,7 +48,7 @@ export default function Pending_event(props){
                 
             </Popups>
             <div className="flex flex-col justify-center items-center top-5">
-                <div onClick={()=>setpop(true)} className=" bg-[#C0ECFA] rounded-lg w-[80%] h-24 hover:transform hover:scale-110 duration-300 rounded-2xl text-center">
+                <div onClick={()=>setpop(true)} className=" bg-[#C0ECFA] w-[80%] h-24 hover:transform hover:scale-110 duration-300 rounded-2xl text-center">
                     <div  className=" z-0 absolute w-full h-full bg-[#48E9E9] opacity-0 transition duration-300 hover:opacity-100 p-4 rounded-lg">
                         <p className="font-bold text-lg align-middle">Click to Respond</p>
                     </div>
