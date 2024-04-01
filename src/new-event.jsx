@@ -112,7 +112,7 @@ export default function Event_register(){
                         <br/>
                     </div>
                     <div className="flex flex-row justify-center align-middle">
-                        <button onClick={showpop} className="justify-items-center rounded-2xl bg-[#7EDBC5] align-middle p-3 w-28 text-center hover:transform hover:scale-110 hover:rounded-3xl duration-300 p-2">Register</button>
+                        <button onClick={showpop} className="justify-items-center rounded-2xl bg-[#7EDBC5] align-middle p-3 w-28 text-center hover:transform hover:scale-110 hover:rounded-3xl duration-300">Register</button>
                     </div>
                     </div>
                 </div>

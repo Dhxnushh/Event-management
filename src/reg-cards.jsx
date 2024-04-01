@@ -60,14 +60,14 @@ export default function Display_cards(props){
                         </div>
                         {studentData.map((student)=>(
                         <div key={student.registerno}>
-                        <button onClick={()=>handleReg(student.Name,student.registerno,student.dept)} className="rounded-2xl bg-[#7EDBC5] align-middle p-3 w-28 text-center hover:transform hover:scale-110 hover:rounded-3xl duration-300 p-2">Register</button>
+                        <button onClick={()=>handleReg(student.Name,student.registerno,student.dept)} className="rounded-2xl bg-[#7EDBC5] align-middle p-3 w-28 text-center hover:transform hover:scale-110 hover:rounded-3xl duration-300">Register</button>
                         </div>
                         ))}
                     </div>
                     </div>
                 </Popups>
                 
-                    <li onClick={()=>setpop(true)} className=' shrink-0 list-none p-3'><img className='w-[250px] h-[350px] rounded-xl shadow-[3px_3px_5px] hover:transform hover:scale-110 hover:translate-y-2 duration-300 rounded-lg text-center"' src={props.brochure}/></li>
+                    <li onClick={()=>setpop(true)} className=' shrink-0 list-none p-3'><img className='w-[250px] h-[350px] hover:rounded-xl shadow-[3px_3px_5px] hover:transform hover:scale-110 hover:translate-y-2 duration-300 rounded-lg text-center"' src={props.brochure}/></li>
             </div>
   )
     

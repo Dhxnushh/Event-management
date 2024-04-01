@@ -37,7 +37,7 @@ export function List_cards(props){
                     <DataGrid className='w-fit h-[400px] justify-center bg-[#ffe7dd] text-white rounded-3xl' rows={rows} columns={columns} /> 
                 </div>
             </Popups>
-            <li onClick={()=>setpop(true)} className=' shrink-0 list-none p-3'><img className='w-[250px] h-[350px] rounded-xl shadow-[3px_3px_5px] hover:transform hover:scale-110 hover:translate-y-2 duration-300 rounded-lg text-center"' src={props.brochure}/></li>
+            <li onClick={()=>setpop(true)} className=' shrink-0 list-none p-3'><img className='w-[250px] h-[350px] rounded-lg shadow-[3px_3px_5px] hover:transform hover:scale-110 hover:translate-y-2 duration-300 hover:rounded-xl text-center"' src={props.brochure}/></li>
         </div>
         
 
