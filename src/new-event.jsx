@@ -28,7 +28,7 @@ export default function Event_register(){
     }
     
     const addevent = {
-        "Event-name":event,
+        "Event":event,
         "Date":date,
         "time":`${time}-${etime}`,
         "venue":venue,
@@ -94,8 +94,8 @@ export default function Event_register(){
                         <br/>
                     </div>
                     <div>
-                        <span onChange={(e)=>setvenue(e.target.value)} className="text-left mt-10">venue: </span>
-                        <input type="text" className=" border-r-0 border-l-0 border-t-0 border-b-2 border-black"/>
+                        <span className="text-left mt-10">venue: </span>
+                        <input onChange={(e)=>setvenue(e.target.value)} type="text" className=" border-r-0 border-l-0 border-t-0 border-b-2 border-black"/>
                         <br/>
                         <br/>
                     </div>
